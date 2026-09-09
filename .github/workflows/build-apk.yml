@@ -1,4 +1,4 @@
-name: Build Hawa Hawai APK
+name: Build Hawa Hawai V2 APK
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -22,14 +22,14 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Extract Hawa Hawai project
-        run: unzip -o Hawa-Hawai-VPN-Android-Starter*.zip
+      - name: Extract V2 source
+        run: unzip -o source-v2.zip
 
-      - name: Build APK
+      - name: Build V2 APK
         run: gradle --no-daemon assembleDebug
 
-      - name: Upload APK
+      - name: Upload V2 APK
         uses: actions/upload-artifact@v4
         with:
-          name: Hawa-Hawai-APK
+          name: Hawa-Hawai-V2-APK
           path: app/build/outputs/apk/debug/app-debug.apk
