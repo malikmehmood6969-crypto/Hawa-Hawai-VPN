@@ -1,0 +1,10 @@
+Hawa Hawai V2 uses interface definitions compatible with the external-control
+API published by "OpenVPN for Android" by Arne Schwabe.
+
+Upstream project:
+https://github.com/schwabe/ics-openvpn
+
+The upstream project states that source needed to control OpenVPN for Android
+from another app (remoteExample) is licensed for external API use and exempted
+from the GPLv2 restrictions applying to the main UI/core. Review the current
+upstream license before commercial redistribution.
